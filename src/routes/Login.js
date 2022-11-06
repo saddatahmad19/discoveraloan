@@ -16,12 +16,12 @@ const Login = () => {
   
   
   return (
-    <div className='container'>
+    <div className='container d-flex justify-content-center pt-5'>
       <div className='card text-center' style={{width: 450}}>
         <div>
           <h1>Login</h1>
         </div>
-        <div className='card-body'>
+        <div className='card-body d-flex justify-content-center'>
           <GoogleButton onClick={handleGoogleSignIn}/>
         </div>
       </div>

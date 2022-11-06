@@ -23,10 +23,10 @@ const Navbar = () => {
 
   return (
     <div>
-        <nav className="navbar navbar-inverse navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-inverse navbar-expand-lg navbar-dark bg-dark ">
             <div className='container-fluid'>
 
-                <a className="navbar-brand" href="#">InvestATrack</a>
+                <a className="navbar-brand" href="#">Discover Loanliness</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" onClick={() => {setShow(!show)}}>
                     <span class="navbar-toggler-icon"></span>
                 </button>
