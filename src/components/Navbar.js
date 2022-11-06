@@ -4,6 +4,8 @@ import { UserAuth } from '../config/authConfig';
 
 const Navbar = () => {
     const {user, logOut} = UserAuth(); 
+    const [show, setShow] = useState(true);
+
 
     const handleSignOut = async() => {
         try {
@@ -13,26 +15,21 @@ const Navbar = () => {
         }
     }
 
-    // useEffect(() => {
-    //     if (user != null) {
-    //         nav('/portfolio')
-    //     }
-    // }, [user])
-
-    const [show, setShow] = useState(true);
-
   return (
     <div>
         <nav className="navbar navbar-inverse navbar-expand-lg navbar-dark bg-dark ">
             <div className='container-fluid'>
 
-                <a className="navbar-brand" href="#">Discover Loanliness</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" onClick={() => {setShow(!show)}}>
+                <a className="navbar-brand" href="/"><span className="text-warning">Discover</span> Loanliness</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" onClick={() => {
+                    setShow(!show);
+                    console.log(show);
+                }}>
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 
-                <div className={show ? "collapse navbar-collapse" : "collapse show collapsing navbar-collapse"} id="navbarSupportedContent">
+                <div className={show ? "collapse navbar-collapse" : "show collapsing navbar-collapse"} id="navbarSupportedContent" toggle-data={"collapse"}>
                     <ul className="navbar-nav mr-auto">
 
                         <li className="nav-item">

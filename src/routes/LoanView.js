@@ -4,6 +4,7 @@ import Loan from '../components/Loan';
 import { collection } from "firebase/firestore"
 import { UserAuth } from '../config/authConfig';
 import { db } from '../config/firebaseConfig'
+import { deepCopy } from '@firebase/util';
 
 const LoanView = () => {
     const {user} = UserAuth();
@@ -21,7 +22,7 @@ const LoanView = () => {
             {
                 docs?.map(function(doc, key) {
                     console.log(doc);
-                    return <Loan name={doc.loanName} interestRate={doc.interestRate} period={doc.loanPeriod} amount={doc.loanAmount} key={key}/>
+                    return <Loan name={doc.loanName} interestRate={doc.interestRate} period={doc.loanPeriod} amount={doc.loanAmount} monthlyAmount={doc.monthlyRate} docID={doc.docID} key={key}/>
             })
             }
         </div>
